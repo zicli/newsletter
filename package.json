@@ -1,0 +1,65 @@
+{
+  "name": "newsletter",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zicli/newsletter.git"
+  },
+  "keywords": [
+    "website"
+  ],
+  "author": "Chima Nnadika <dcnnad@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zicli/newsletter/issues"
+  },
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "emailjs-com": "^2.4.1",
+    "express": "^4.17.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.10.2",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
+    "react-animations": "^1.0.0",
+    "react-burger-menu": "^2.6.13",
+    "react-dom": "^16.10.2",
+    "react-helmet": "^5.2.1",
+    "react-hook-form": "^5.2.0",
+    "react-reveal": "^1.2.2",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.3.1",
+    "react-tabs": "^3.1.0",
+    "react-transition-group": "^4.3.0",
+    "scrollreveal": "^4.0.5",
+    "styled-components": "^4.4.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0"
+  }
+}
