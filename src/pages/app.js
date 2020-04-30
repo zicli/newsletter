@@ -3,17 +3,35 @@ import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { GlobalStyle, Screen } from 'styles';
 import {
-  Nav,
+  Nav, Hero,
 } from 'components';
 
 const AppContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 200px 180px 30px 200px;
+  margin: 0 150px;
+  ${Screen.pc`
+  margin-left: 110px;
+  margin-right: 90px;
+`};
+  ${Screen.screen936`
+  margin:0 100px;
+`};
+  ${Screen.tablet`
+  margin: 0 95px;
+`};
+${Screen.miniTablet`
+  margin: 0 95px;
+`};
+  ${Screen.screen630`
+  margin: 0 40px;
+`};
   ${Screen.largePhone`
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 0 30px;
+`};
+  ${Screen.screen320`
+  margin: 0 30px;
 `};
 `;
 
@@ -25,6 +43,7 @@ const App = () => (
   </Helmet>
     <GlobalStyle />
     <Nav />
+    <Hero/>
   </AppContainer>
 );
 

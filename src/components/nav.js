@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { slide as Hamburger } from 'react-burger-menu';
 import { Basics, Screen } from 'styles';
 import { links } from 'config';
 import Logo from 'images/ziclilogo.png';
 
 const NavContainer = styled.div`
   position: fixed;
-  height: 11vh;
+  z-index: 900;
+  height: 10vh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -20,11 +22,21 @@ const NavContainer = styled.div`
   transition: ${Basics.transition};
   background-color: ${Basics.colors.white};
   box-shadow: 0 2px 1px 1px ${Basics.colors.lightGrey};
-  ${Screen.largePhone`
+  ${Screen.largeScreen`
     height: 90px;
+  `};
+  ${Screen.tablet`
+    height: 80px;
+  `};
+  ${Screen.largePhone`
+    height: 70px;
   `};
 `;
 
+const HamburgerContainer = styled.div`
+margin-top: -80px;
+overflow: auto;
+`;
 const Transition = styled.div`
   .active {
     visibility: visible;
@@ -45,11 +57,15 @@ const Svg = styled.header`
     height: 30px;
   }
   ${Screen.tablet`
-    margin-left: 50px;
+    margin-left: 20px;
   `};
   ${Screen.miniTablet`
-    margin-top: 35px;
-    margin-left: 20px;
+  svg {
+    fill: ${Basics.colors.solidBlue};
+    width: 18px;
+    height: 18px;
+  }
+    margin-left: 15px;
   `};
 `;
 const ListContainer = styled.div`
@@ -59,15 +75,20 @@ const ListContainer = styled.div`
   flex-direction: row;
   right: 100px;
   font-weight: 550;
+  ${Screen.tablet`
+    right: 30px;
+  `};
   ${Screen.largePhone`
-  margin-top: 15px;
-  right: 10px;
+    margin-top: 15px;
+    right: 10px;
+  `};
+  ${Screen.miniTablet`
+    margin-top: 0px;
   `};
 `;
 
 const NavList = styled.div`
   height: 23px;
-  color: white;
   // padding-right: 50px;
   // ${Screen.largePhone`
   //   padding-right: 30px;
@@ -125,6 +146,20 @@ export default class Nav extends React.Component {
             <img style={image} src={Logo} alt='logo'/>
           </Link>
         </Svg>
+        <HamburgerContainer>
+            <Hamburger right style={{ zIndex: '900' }}>
+              <NavBtn>
+                <a
+                href={
+                  '/'
+                }
+                className='btn-primary'
+                >
+                  {navs}
+                </a>
+              </NavBtn>
+            </Hamburger>
+          </HamburgerContainer>
           <ListContainer>
             <NavBtn>
               <a
