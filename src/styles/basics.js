@@ -22,6 +22,8 @@ const basics = {
     deepBlue: '#010D4E',
     rose: '#AA405B',
     pink: '#DBA3B1',
+    brightOrange: '#E2A06D',
+    lightGrey: '#E2E2E2',
   },
   transition: 'all 0.25s cubic-bezier(0.3, 0.3, 0.3, 0.3)',
   fonts: {

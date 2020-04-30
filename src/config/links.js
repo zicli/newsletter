@@ -1,11 +1,7 @@
 const links = {
   navLinks: [
     {
-      name: 'Link1',
-      url: '/',
-    },
-    {
-      name: 'Link2',
+      name: 'Subscribe',
       url: '/',
     },
   ],
