@@ -1,9 +1,7 @@
 /* eslint-disable no-tabs */
 import React from 'react';
 import styled from 'styled-components';
-import {
-  Screen, Basics, HomePage,
-} from 'styles';
+import { HomePage } from 'styles';
 import { Zoom } from 'react-reveal';
 import HeroImage from '../images/hero.jpg';
 
@@ -21,6 +19,7 @@ text-align: center;
 const hero = () => (
   <HeroStyle>
     <div className="heroContainer">
+
       <div className="heroText">
         <h1 className='heroquote1'>
           {'WELCOME TO\nOUR NEWSLETTER'}
@@ -45,10 +44,9 @@ const hero = () => (
           </div>
         </Zoom>
       </div>
+
     </div>
   </HeroStyle>
-
-
 );
 
 export default hero;

@@ -5,6 +5,7 @@ const basics = {
     white: '#ffffff',
     creamWhite: '#FFFEFC',
     bloodRed: '#800020',
+    wineRed: '#741C17',
     fadedRed: '#AA6969',
     solidBlue: '#2844A0',
     neonBlue: '#002FAD',

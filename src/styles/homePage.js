@@ -7,7 +7,7 @@ const HomePage = {
 
   .heroContainer{
     position: relative;
-    height: 65vh;
+    height: 70vh;
     width: 77vw;
     display: flex;
     flex-flow: row wrap;
@@ -37,12 +37,12 @@ const HomePage = {
   }
 
   .herotext2{
-    font-size: 11px;
+    font-size: 12.5px;
     font-weight: 900;
     color: black;
     width: 80%;
     text-align: start;
-    letter-spacing: 1px;
+    letter-spacing: .40px;
   }
 
   .heroForm {
@@ -70,7 +70,7 @@ const HomePage = {
   }
 
   .heroImg{
-    height: 900px;
+    height: auto;
     position: relative;
     border-radius: 10px;
   }

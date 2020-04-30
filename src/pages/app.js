@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { GlobalStyle, Screen } from 'styles';
 import {
-  Nav, Hero,
+  Nav, Hero, NewsletterCard,
 } from 'components';
 
 const AppContainer = styled.div`
@@ -44,6 +44,7 @@ const App = () => (
     <GlobalStyle />
     <Nav />
     <Hero/>
+    <NewsletterCard/>
   </AppContainer>
 );
 
