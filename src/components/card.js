@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import styled from 'styled-components';
@@ -7,22 +8,19 @@ const CardContainer = styled.div`
   ${CardStyles.newsletterCard}
 `;
 
-const Card = () => (
-  <CardContainer>
-    <div className="square">
-      <div className='inner-card'>
+const Card = ({
+  title, desc, author, createdAt,
+}) => (
+  <CardContainer className='square'>
+    <div className='inner-card'>
       <div className="cardHeader">
         <a href='#'>
-          ZICLI SYNERGY OPENS DOOR TO FORIEGN SHIPPING GROUP
+          {title}
         </a>
       </div>
-       <p className='cardText'>Apple is more than a tech company; it became a culture unto itself,
-         a passion of most of people and the birthplace of the world’s most revolutionized products.
-         The biggest thing to keep in mind with HTML is that all HTML code begins with an open tag.
-        </p>
-      <span className='cardAuthor'>Amaka Obiefo | April 19, 2020</span>
+      <p className='cardText'>{desc}</p>
+      <span className='cardAuthor'>{author} | {createdAt}</span>
       </div>
-    </div>
   </CardContainer>
 );
 

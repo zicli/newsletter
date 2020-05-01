@@ -130,8 +130,8 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
   .btn-primary:hover {
-    background: transparent;
-    color:${Basics.colors.brightOrange};
+    background: ${Basics.colors.bloodRed};
+    border: 3px solid ${Basics.colors.bloodRed};
   }
 
 `;
