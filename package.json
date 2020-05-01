@@ -15,6 +15,7 @@
   },
   "private": true,
   "dependencies": {
+    "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "emailjs-com": "^2.4.1",
     "express": "^4.17.1",
@@ -31,7 +32,10 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.3.1",
     "react-tabs": "^3.1.0",
+    "react-thunk": "^1.0.0",
     "react-transition-group": "^4.3.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "scrollreveal": "^4.0.5",
     "styled-components": "^4.4.0"
   },
