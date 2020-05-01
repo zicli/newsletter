@@ -13,6 +13,8 @@ const sizes = {
   screen1288: 1288,
   midLarge: 1240,
   largeScreen: 1200,
+  screen1850: 1850,
+  screen1450: 1450,
   midScreen: 1191,
   screen1125: 1125,
   screen1100: 1100,

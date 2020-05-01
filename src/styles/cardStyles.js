@@ -6,7 +6,7 @@ const CardStyle = {
   newsletterCard: css`
 
   .square{
-    flex: 1 0 45%;
+    flex: 1 1 47%;
     height: auto;
     border: .8px solid #f2f2f2;
     border-radius: 10px;
@@ -48,6 +48,7 @@ const CardStyle = {
     margin: 20px 0;
     font-size: 13px;
     color: #000;
+    text-align: justify;
     font-weight: 700;
   }
 
@@ -56,8 +57,24 @@ const CardStyle = {
     letter-spacing: .6px;
     font-weight: 500;
     color: ${Basics.colors.fadedRed}
-
   }
+
+  ${Screen.screen936`
+    .cardHeader {
+      font-size: 19px;
+      line-height: 1;
+    }
+  `};
+  ${Screen.tablet`
+    .cardHeader {
+      font-size: 20px;
+    }
+    .square{
+      flex: 1 0 100%;
+      height: auto;
+      margin: 15px 0;
+      }
+  `};
   `,
 };
 
