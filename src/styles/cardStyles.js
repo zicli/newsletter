@@ -15,7 +15,7 @@ const CardStyle = {
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    margin: 15px 7px;
+    margin: 10px 7px;
     }
 
   .square:hover {
