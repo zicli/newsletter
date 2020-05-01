@@ -19,6 +19,7 @@
     "bootstrap": "^4.4.1",
     "emailjs-com": "^2.4.1",
     "express": "^4.17.1",
+    "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-anchor-link-smooth-scroll": "^1.0.12",

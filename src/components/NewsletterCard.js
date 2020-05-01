@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Newsletter } from 'config';
 import { Zoom } from 'react-reveal';
 import { CardStyles, Screen } from 'styles';
+import { connect } from 'react-redux';
+import { getNewsletter } from '../redux/action/newsletter';
 import Card from './card';
 
 const NewsContainer = styled.div`
@@ -47,20 +49,30 @@ const NewsContainer = styled.div`
     `};
 `;
 
-const cards = Newsletter.letters.map((item, i) => <Card key={i}
-    title={item.title}
-    desc={item.desc}
-    author={item.author}
-    createdAt={item.createdAt}
-  />);
+export class NewsletterCard extends Component {
+  componentDidMount() {
+    this.props.getNewsletter();
+  }
 
-const NewsletterCard = () => (
-  <Zoom>
-     <NewsContainer>
-       {cards}
-    </NewsContainer>
-  </Zoom>
+  render() {
+    const cards = Newsletter.letters.map((item, i) => <Card key={i}
+      title={item.title}
+      desc={item.desc}
+      author={item.author}
+      createdAt={item.createdAt}
+    />);
+    return (
+      <Zoom>
+        <NewsContainer>
+          {cards}
+      </NewsContainer>
+    </Zoom>
+    );
+  }
+}
 
-);
+// function mapStateToProps(params) {
 
-export default NewsletterCard;
+// }
+
+export default connect(null, { getNewsletter })(NewsletterCard);
