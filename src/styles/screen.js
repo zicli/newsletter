@@ -19,6 +19,7 @@ const sizes = {
   screen1125: 1125,
   screen1100: 1100,
   pc: 1024,
+  screen980: 980,
   screen936: 936,
   screen903: 903,
   screen874: 874,

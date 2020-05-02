@@ -23,8 +23,17 @@ const NewsContainer = styled.div`
     ${Screen.midScreen`
       margin-top: -400px;
     `};
+    ${Screen.screen1100`
+      margin-top: -100px;
+    `};
     ${Screen.pc`
-      margin-top: -510px;
+      margin-top: -530px;
+    `};
+    ${Screen.screen980`
+      margin-top: -100px;
+    `};
+    ${Screen.screen903`
+      margin-top: -100px;
     `};
     ${Screen.screen800`
       margin-top: -530px;
@@ -33,10 +42,13 @@ const NewsContainer = styled.div`
       margin-top: -450px;
     `};
     ${Screen.screen666`
-      margin-top: -550px;
+      margin-top: 40px;
     `};
     ${Screen.screen630`
       margin-top: -150px;
+    `};
+    ${Screen.miniTablet`
+      margin-top: -250px;
     `};
     ${Screen.largePhone`
       margin-top: -200px;
