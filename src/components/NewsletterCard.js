@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { Component } from 'react';
+import React from 'react';
+import { useQuery } from '@apollo/react-hooks';
 import styled from 'styled-components';
-import { Newsletter } from 'config';
 import { Zoom } from 'react-reveal';
 import { CardStyles, Screen } from 'styles';
-import { connect } from 'react-redux';
-import { getNewsletter } from '../redux/action/newsletter';
 import Card from './card';
+import { GET_NEWSLETTERS } from '../graphql/query/queries';
+import Loader from './loader';
 
 const NewsContainer = styled.div`
   ${CardStyles.newsletterCard}
@@ -61,30 +61,27 @@ const NewsContainer = styled.div`
     `};
 `;
 
-export class NewsletterCard extends Component {
-  componentDidMount() {
-    this.props.getNewsletter();
-  }
+const NewsletterCard = () => {
+  const { loading, data } = useQuery(GET_NEWSLETTERS);
+  // await [...data].getAllNewsletters.map((item) => ({
+  //   ...item,
+  //   item.createdAt: moment(item.createdAt).format('MMMM Do YYYY');
+  // });
 
-  render() {
-    const cards = Newsletter.letters.map((item, i) => <Card key={i}
-      title={item.title}
-      desc={item.desc}
-      author={item.author}
-      createdAt={item.createdAt}
-    />);
-    return (
-      <Zoom>
-        <NewsContainer>
-          {cards}
-      </NewsContainer>
-    </Zoom>
-    );
-  }
-}
+  return (
+    <NewsContainer>
+    { loading
+      && <div className='loading'>
+              <Loader/>
+            </div>
+    }
+    {
+      data && data.getAllNewsletters.map((item, i) => (
+      <Card key={i} newsletter={item} />))
+    }
+    </NewsContainer>
+  );
+};
 
-// function mapStateToProps(params) {
 
-// }
-
-export default connect(null, { getNewsletter })(NewsletterCard);
+export default NewsletterCard;

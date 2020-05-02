@@ -1,1 +1,0 @@
-export const GET_NEWSLETTER = 'GET_NEWSLETTER';

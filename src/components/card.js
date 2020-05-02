@@ -9,18 +9,22 @@ const CardContainer = styled.div`
 `;
 
 const Card = ({
-  title, desc, author, createdAt,
+  newsletter: {
+    title, content, author, createdAt,
+  },
 }) => (
   <CardContainer className='square'>
     <div className='inner-card'>
-      <div className="cardHeader">
-        <a href='#'>
-          {title}
-        </a>
-      </div>
-      <p className='cardText'>{desc}</p>
-      <span className='cardAuthor'>{author} | {createdAt}</span>
-      </div>
+        <div className="cardHeader">
+          <a href='#'>
+            {title}
+          </a>
+        </div>
+        <div className="fit">
+          <p className='cardText'>{content}</p>
+        </div>
+        <span className='cardAuthor'>{author} | {createdAt}</span>
+    </div>
   </CardContainer>
 );
 
