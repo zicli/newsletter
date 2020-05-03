@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import styled from 'styled-components';
 import { Zoom } from 'react-reveal';
@@ -63,23 +63,27 @@ const NewsContainer = styled.div`
 
 const NewsletterCard = () => {
   const { loading, data } = useQuery(GET_NEWSLETTERS);
-  // await [...data].getAllNewsletters.map((item) => ({
-  //   ...item,
-  //   item.createdAt: moment(item.createdAt).format('MMMM Do YYYY');
-  // });
+  // [...data].getAllNewsletters.forEach((item) => ({
+  //   item.
 
+  // }));
   return (
-    <NewsContainer>
-    { loading
-      && <div className='loading'>
+    <Zoom>
+      <NewsContainer>
+        { loading
+          && <Fragment>
+            <div className='loading'>
               <Loader/>
             </div>
-    }
-    {
-      data && data.getAllNewsletters.map((item, i) => (
-      <Card key={i} newsletter={item} />))
-    }
-    </NewsContainer>
+            </Fragment>
+        }
+        { !data && null }
+        {
+          data && data.getAllNewsletters.map((item, i) => (
+          <Card key={i} newsletter={item} />))
+        }
+      </NewsContainer>
+    </Zoom>
   );
 };
 

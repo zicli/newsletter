@@ -6,8 +6,8 @@ const CardStyle = {
   newsletterCard: css`
 
   .square{
-    flex: 1 0 47%;
-    height: 340px;
+    flex: 1 0 48%;
+    height: fit-content;
     border: .8px solid #f2f2f2;
     border-radius: 10px;
     border: 1px solid #f2f2f2;
@@ -27,17 +27,13 @@ const CardStyle = {
   }
 
   .inner-card {
-    padding: 35px;
+    padding: 45px 35px;
     display: flex;
     flex-direction: column;
     align-items: space-between;
     align-content: space-between;
   }
 
-  .fit {
-    max-height: 160px;
-    overflow-y: hidden;
-  }
 
   .cardHeader {
     font-size: 22px;
@@ -45,9 +41,14 @@ const CardStyle = {
     font-weight: 800;
   }
 
+  a[data-content]:hover {
+    text-decoration: underline;
+  }
+
   .loading {
     display: flex;
     justify-content: center;
+    width: 100%
   }
 
   .cardHeader a {
@@ -68,7 +69,8 @@ const CardStyle = {
 
   .cardAuthor {
     font-size: 11px;
-    // margin-top: 50px;
+    align-items: flex-end;
+    align-content: flex-end;
     letter-spacing: .6px;
     font-weight: 500;
     color: ${Basics.colors.fadedRed}
@@ -82,12 +84,23 @@ const CardStyle = {
   `};
   ${Screen.tablet`
     .cardHeader {
+      font-size: 19px;
+      text-align: center;
+    }
+    .inner-card {
+      padding: 28px 23px
+    }
+    .cardHeader {
       font-size: 20px;
     }
     .square{
       flex: 1 0 100%;
       height: auto;
       margin: 15px 0;
+      }
+      .cardAuthor {
+        margin: 15px 0 10px;
+        text-align: center;
       }
   `};
   `,
