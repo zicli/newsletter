@@ -5,6 +5,7 @@ const basics = {
     white: '#ffffff',
     creamWhite: '#FFFEFC',
     bloodRed: '#800020',
+    wineRed: '#741C17',
     fadedRed: '#AA6969',
     solidBlue: '#2844A0',
     neonBlue: '#002FAD',
@@ -22,6 +23,8 @@ const basics = {
     deepBlue: '#010D4E',
     rose: '#AA405B',
     pink: '#DBA3B1',
+    brightOrange: '#E2A06D',
+    lightGrey: '#E2E2E2',
   },
   transition: 'all 0.25s cubic-bezier(0.3, 0.3, 0.3, 0.3)',
   fonts: {

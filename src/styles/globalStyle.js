@@ -70,7 +70,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${Basics.colors.deepBlue};
+    color: ${Basics.colors.creamWhite};
     text-decoration: none;
     text-decoration-skip-ink: auto;
     position: relative;
@@ -79,7 +79,7 @@ const GlobalStyle = createGlobalStyle`
 
     &:hover,
     &:focus {
-      color: ${Basics.colors.neonBlue};
+      color: ${Basics.colors.brightOrange};
       outline: 0;
     }
   }
@@ -93,13 +93,13 @@ const GlobalStyle = createGlobalStyle`
 
   }
 
-  ol { 
+  ol {
     counter-reset: item;
     list-style-type: none;
     margin-left: -2.5em;
   }
-  li { 
-    display: block; 
+  li {
+    display: block;
     font-size: 28px;
     font-family: ${Basics.fonts.BalooBhaina};
     color: ${Basics.colors.deepBlue};
@@ -111,12 +111,78 @@ const GlobalStyle = createGlobalStyle`
     `};
   }
 
-  li:before { 
-    content: counter(item, decimal-leading-zero) ". "; 
+  li:before {
+    content: counter(item, decimal-leading-zero) ". ";
     counter-increment: item;
     color: ${Basics.colors.deepBlue};
     font-weight: 400;
   }
+
+  .btn-primary {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background:  ${Basics.colors.brightOrange};
+    padding: 0.2rem 0.9rem;
+    border: 3px solid ${Basics.colors.brightOrange};
+    border-radius: 5px;
+    transition: all 0.3s linear;
+    cursor: pointer;
+  }
+  .btn-primary:hover {
+    background: ${Basics.colors.bloodRed};
+    border: 3px solid ${Basics.colors.bloodRed};
+  }
+
+  .bm-item {
+    text-decoration: none;
+    outline: 0;
+    margin-bottom: 20px;
+    transition: ${Basics.transition};
+  }
+  
+  .bm-burger-button {
+    display: none;
+    ${Screen.largePhone`
+      display: inline;
+    `};
+    position: fixed;
+    width: 25px;
+    height: 15px;
+    top: 35px;
+    right: 25px;
+  }
+  
+  .bm-burger-bars {
+    background: ${Basics.colors.fadedRed};
+  }
+  
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+  
+  .bm-cross {
+    background: ${Basics.colors.fadedRed};
+  }
+  
+  .bm-menu {
+    background: ${Basics.colors.creamWhite};
+    padding: 15.5em 1.5em 1.5em 1.5em;
+    font-size: 1.15em;
+    font-weight: 700;
+  }
+  
+  .bm-morph-shape {
+    fill: #373a47;
+  }
+  .bm-item-list {
+    color: #b8b7ad;
+  }
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
 `;
 
 export default GlobalStyle;
