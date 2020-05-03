@@ -78,13 +78,12 @@ const ListContainer = styled.div`
   ${Screen.tablet`
     right: 30px;
   `};
-  ${Screen.largePhone`
-    margin-top: 15px;
-    right: 10px;
-  `};
   ${Screen.miniTablet`
     margin-top: 0px;
   `};
+  ${Screen.largePhone`
+  display: none;
+`};
 `;
 
 const NavList = styled.div`

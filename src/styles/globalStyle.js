@@ -134,6 +134,55 @@ const GlobalStyle = createGlobalStyle`
     border: 3px solid ${Basics.colors.bloodRed};
   }
 
+  .bm-item {
+    text-decoration: none;
+    outline: 0;
+    margin-bottom: 20px;
+    transition: ${Basics.transition};
+  }
+  
+  .bm-burger-button {
+    display: none;
+    ${Screen.largePhone`
+      display: inline;
+    `};
+    position: fixed;
+    width: 25px;
+    height: 15px;
+    top: 35px;
+    right: 25px;
+  }
+  
+  .bm-burger-bars {
+    background: ${Basics.colors.fadedRed};
+  }
+  
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+  
+  .bm-cross {
+    background: ${Basics.colors.fadedRed};
+  }
+  
+  .bm-menu {
+    background: ${Basics.colors.creamWhite};
+    padding: 15.5em 1.5em 1.5em 1.5em;
+    font-size: 1.15em;
+    font-weight: 700;
+  }
+  
+  .bm-morph-shape {
+    fill: #373a47;
+  }
+  .bm-item-list {
+    color: #b8b7ad;
+  }
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
 `;
 
 export default GlobalStyle;
