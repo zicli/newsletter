@@ -162,7 +162,7 @@ export default class Nav extends React.Component {
           <ListContainer>
             <NavBtn>
               <a
-              href='http://www.github.com/Tueloper'
+              href='/'
               className='btn-primary'
               >
               {navs}

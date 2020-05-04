@@ -4,7 +4,7 @@ const basics = {
     blackRed: '#420f0f',
     white: '#ffffff',
     creamWhite: '#FFFEFC',
-    bloodRed: '#800020',
+    bloodRed: '#800121',
     wineRed: '#741C17',
     fadedRed: '#AA6969',
     solidBlue: '#2844A0',

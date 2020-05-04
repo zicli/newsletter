@@ -1,5 +1,6 @@
 import { css } from 'styled-components';
 import Screen from './screen';
+import { Basics } from './index';
 
 
 const HomePage = {
@@ -26,7 +27,7 @@ const HomePage = {
   .heroquote1{
     font-size: 35px !important;
     font-weight: 900;
-    color: #AD7271;
+    color: ${Basics.colors.bloodRed};
     text-align: start !important;
     white-space: pre;
     padding-bottom: 10px;
@@ -38,7 +39,7 @@ const HomePage = {
 
   .herotext2{
     font-size: 12.5px;
-    font-weight: 900;
+    font-weight: 700;
     color: black;
     width: 80%;
     text-align: start;
@@ -69,6 +70,10 @@ const HomePage = {
     margin: 0 10px 0 0;
   }
 
+  .form-control:placeholder-shown {
+    border: 1px solid ${Basics.colors.lightGrey};
+  }
+
   .heroImg{
     height: auto;
     position: relative;
@@ -77,6 +82,8 @@ const HomePage = {
 
   .img-fluid {
     border-radius: 20px;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   }
 
   ${Screen.screen1125`
