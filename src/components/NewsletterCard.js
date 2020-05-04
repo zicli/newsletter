@@ -63,10 +63,7 @@ const NewsContainer = styled.div`
 
 const NewsletterCard = () => {
   const { loading, data } = useQuery(GET_NEWSLETTERS);
-  // [...data].getAllNewsletters.forEach((item) => ({
-  //   item.
 
-  // }));
   return (
     <Zoom>
       <NewsContainer>

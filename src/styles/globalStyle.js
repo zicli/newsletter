@@ -79,7 +79,7 @@ const GlobalStyle = createGlobalStyle`
 
     &:hover,
     &:focus {
-      color: ${Basics.colors.brightOrange};
+      color: ${Basics.colors.white};
       outline: 0;
     }
   }
@@ -140,7 +140,7 @@ const GlobalStyle = createGlobalStyle`
     margin-bottom: 20px;
     transition: ${Basics.transition};
   }
-  
+
   .bm-burger-button {
     display: none;
     ${Screen.largePhone`
@@ -152,27 +152,27 @@ const GlobalStyle = createGlobalStyle`
     top: 35px;
     right: 25px;
   }
-  
+
   .bm-burger-bars {
     background: ${Basics.colors.fadedRed};
   }
-  
+
   .bm-cross-button {
     height: 24px;
     width: 24px;
   }
-  
+
   .bm-cross {
     background: ${Basics.colors.fadedRed};
   }
-  
+
   .bm-menu {
     background: ${Basics.colors.creamWhite};
     padding: 15.5em 1.5em 1.5em 1.5em;
     font-size: 1.15em;
     font-weight: 700;
   }
-  
+
   .bm-morph-shape {
     fill: #373a47;
   }
