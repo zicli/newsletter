@@ -182,6 +182,30 @@ const GlobalStyle = createGlobalStyle`
   .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
   }
+  .lds-dual-ring {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+  }
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin: -3px 2px 0 6px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 
 `;
 

@@ -1,14 +1,13 @@
 /* eslint-disable no-tabs */
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { HomePage } from 'styles';
 import { Zoom } from 'react-reveal';
-import { useMutation, onError } from '@apollo/react-hooks';
-import {
-  ToastsContainer, ToastsStore, ToastContainer, ToastsContainerPosition,
-} from 'react-toasts';
+import { useMutation } from '@apollo/react-hooks';
+import { ToastsStore } from 'react-toasts';
 import HeroImage from '../images/hero.jpg';
 import { ADD_SUBSCRIBERS } from '../graphql/mutations';
+import ButtonLaoder from './buttonLaoder';
 
 const HeroStyle = styled.div`
 ${HomePage.hero}
@@ -21,32 +20,26 @@ text-align: center;
 `;
 
 const Hero = () => {
-  let input;
-  const [addSubscribers, { loading, data, error }] = useMutation(ADD_SUBSCRIBERS);
+  const [email, setEmail] = useState('');
 
-  // const onChange = (node) => { input = node; };
-  // const onSubmit = async (e) => {
-  //   e.preventDefault();
-  //   addSubscribers({ variables: { email: input.value } });
-  //   if (error.stringify() === 'Error: Network error: Failed to fetch') {
-  //     console.log(error);
-  //   }
-  //   input.value = '';
-  // };
+  const [addSubscribers, { loading }] = useMutation(ADD_SUBSCRIBERS, { errorPolicy: 'all' });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      if (email === '') return ToastsStore.warning('Please input your Email!!');
+      await addSubscribers({ variables: { email } });
+      setEmail('');
+      return ToastsStore.success('Thank You For Subscribing');
+    } catch (err) {
+      setEmail('');
+    }
+  };
 
   return (
     <HeroStyle>
-       { error
-          && error === 'Error: Network error: Failed to fetch'
-         ? ToastsStore.error('Network error: Failed to fetch')
-         : ToastsStore.error('Email Already Exist')
-        }
-        {
-          loading
-          && ToastsStore.success('Hey, you just clicked!')
-        }
+
       <div className="heroContainer">
-        <ToastsContainer store={ToastsStore}/>
         <div className="heroText">
           <h1 className='heroquote1'>
             {'WELCOME TO\nOUR NEWSLETTER'}
@@ -60,21 +53,18 @@ const Hero = () => {
                 type='text'
                 className='form-control'
                 placeholder='Email'
+                value={email}
                 name='email'
-                ref={(node) => {
-                  input = node;
-                }}
+                onChange={(e) => (setEmail(e.target.value))}
               />
                 <HeroBtn
                   className='btn-primary'
-                  type='submit' role='button'
-                  onClick={(e) => {
-                    e.preventDefault();
-                    addSubscribers({ variables: { email: input.value } });
-                    input.value = '';
-                  }}
+                  type='submit'
+                  role='button'
+                  onClick={handleSubmit}
                   >
                     Subscribe
+                    { loading && <ButtonLaoder/> }
                 </HeroBtn>
             </form>
           </Zoom>

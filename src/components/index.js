@@ -3,6 +3,7 @@ import Hero from './hero';
 import Card from './card';
 import NewsletterCard from './NewsletterCard';
 import Loader from './loader';
+import ButtonLoader from './buttonLaoder';
 
 export {
   Nav,
@@ -10,4 +11,5 @@ export {
   Card,
   NewsletterCard,
   Loader,
+  ButtonLoader
 };
