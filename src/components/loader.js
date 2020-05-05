@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Loader from '../images/loader.gif';
 
-const image = {
+const imageStyle = {
   height: '50px',
   width: '50px',
 };
@@ -16,7 +16,7 @@ export class loader extends Component {
   render() {
     return (
       <div style={loaderStyle}>
-        <img src={Loader} style={image} alt='Loading.....'/>
+        <img src={Loader} style={imageStyle} alt='Loading.....'/>
       </div>
     );
   }

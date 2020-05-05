@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Zoom } from 'react-reveal';
 import { CardStyles, Screen } from 'styles';
 import Card from './card';
-import { GET_NEWSLETTERS } from '../graphql/query/queries';
+import { GET_NEWSLETTERS } from '../graphql/queris';
 import Loader from './loader';
 
 const NewsContainer = styled.div`
