@@ -11,5 +11,5 @@ export {
   Card,
   NewsletterCard,
   Loader,
-  ButtonLoader
+  ButtonLoader,
 };

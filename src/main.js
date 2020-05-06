@@ -13,7 +13,7 @@ const client = new ApolloClient({
   uri: REACT_APP_API_URL,
   onError({ graphQLErrors, networkError }) {
     if (graphQLErrors) graphQLErrors.forEach(({ message }) => ToastsStore.error(`${message}`));
-    if (networkError) ToastsStore.error(`[Network error]: ${networkError}`);
+    // if (networkError) ToastsStore.error(`${networkError}`);
   },
 });
 
@@ -21,7 +21,7 @@ class Main extends Component {
   render() {
     return (
       <ApolloProvider client={client}>
-        <ToastsContainer store={ToastsStore}/>
+        <ToastsContainer store={ToastsStore} lightBackground/>
          <Switch>
           <Route exact path='/' component={App} />
           <Route exact path='/404' component={ErrorPage} />

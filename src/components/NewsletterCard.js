@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import styled from 'styled-components';
 import { Zoom } from 'react-reveal';
+import { ToastsContainer, ToastsStore } from 'react-toasts';
 import { CardStyles, Screen } from 'styles';
 import Card from './card';
 import { GET_NEWSLETTERS } from '../graphql/queris';
@@ -62,10 +63,11 @@ const NewsContainer = styled.div`
 `;
 
 const NewsletterCard = () => {
-  const { loading, data } = useQuery(GET_NEWSLETTERS);
+  const { loading, data, error } = useQuery(GET_NEWSLETTERS);
 
   return (
     <Zoom>
+      <ToastsContainer store={ToastsStore} lightBackground/>
       <NewsContainer>
         { loading
           && <Fragment>
@@ -74,7 +76,7 @@ const NewsletterCard = () => {
             </div>
             </Fragment>
         }
-        { !data && null }
+        { error && ToastsStore.error('News Not Found, Please Try Again Later') }
         {
           data && data.getAllNewsletters.map((item, i) => (
           <Card key={i} newsletter={item} />))

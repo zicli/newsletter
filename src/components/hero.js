@@ -30,7 +30,7 @@ const Hero = () => {
       if (email === '') return ToastsStore.warning('Please input your Email!!');
       await addSubscribers({ variables: { email } });
       setEmail('');
-      return ToastsStore.success('Thank You For Subscribing');
+      return ToastsStore.success('Thank You For Subscribing\nZicli Newsletters');
     } catch (err) {
       setEmail('');
     }
