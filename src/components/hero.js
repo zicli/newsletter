@@ -1,4 +1,3 @@
-/* eslint-disable no-tabs */
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { HomePage } from 'styles';
@@ -22,7 +21,7 @@ text-align: center;
 const Hero = () => {
   const [email, setEmail] = useState('');
 
-  const [addSubscribers, { loading, error }] = useMutation(ADD_SUBSCRIBERS, { errorPolicy: 'all' });
+  const [addSubscribers, { loading }] = useMutation(ADD_SUBSCRIBERS, { errorPolicy: 'all' });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
