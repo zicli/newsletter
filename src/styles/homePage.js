@@ -14,6 +14,7 @@ const HomePage = {
     flex-flow: row wrap;
     justify-content: space-evenly;
     margin-top: 110px;
+    background: #fff;
   }
 
   .heroText {

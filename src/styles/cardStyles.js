@@ -46,6 +46,7 @@ const CardStyle = {
   }
 
   .loading {
+    margin-top: 150px;
     display: flex;
     justify-content: center;
     width: 100%

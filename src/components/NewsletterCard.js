@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import styled from 'styled-components';
 import { Zoom } from 'react-reveal';
-import { ToastsContainer, ToastsStore } from 'react-toasts';
+import { ToastsStore } from 'react-toasts';
 import { CardStyles, Screen } from 'styles';
 import Card from './card';
 import { GET_NEWSLETTERS } from '../graphql/queris';
@@ -67,7 +67,6 @@ const NewsletterCard = () => {
 
   return (
     <Zoom>
-      <ToastsContainer store={ToastsStore} lightBackground/>
       <NewsContainer>
         { loading
           && <Fragment>

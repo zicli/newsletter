@@ -22,15 +22,16 @@ text-align: center;
 const Hero = () => {
   const [email, setEmail] = useState('');
 
-  const [addSubscribers, { loading }] = useMutation(ADD_SUBSCRIBERS, { errorPolicy: 'all' });
+  const [addSubscribers, { loading, error }] = useMutation(ADD_SUBSCRIBERS, { errorPolicy: 'all' });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       if (email === '') return ToastsStore.warning('Please input your Email!!');
       await addSubscribers({ variables: { email } });
+      if (error) return ToastsStore.error(error);
       setEmail('');
-      return ToastsStore.success('Thank You For Subscribing\nZicli Newsletters');
+      return ToastsStore.success('You Have Subscribed to Zicli Newsletters');
     } catch (err) {
       setEmail('');
     }
