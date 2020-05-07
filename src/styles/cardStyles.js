@@ -34,7 +34,6 @@ const CardStyle = {
     align-content: space-between;
   }
 
-
   .cardHeader {
     font-size: 22px;
     line-height: 1.3;

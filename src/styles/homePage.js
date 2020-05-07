@@ -8,7 +8,7 @@ const HomePage = {
 
   .heroContainer{
     position: relative;
-    height: 70vh;
+    max-height: 70vh;
     width: auto;
     display: flex;
     flex-flow: row wrap;

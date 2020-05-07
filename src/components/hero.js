@@ -29,7 +29,6 @@ const Hero = () => {
     try {
       if (email === '') return ToastsStore.warning('Please input your Email!!');
       await addSubscribers({ variables: { email } });
-      if (error) return ToastsStore.error(error);
       setEmail('');
       return ToastsStore.success('You Have Subscribed to Zicli Newsletters');
     } catch (err) {
