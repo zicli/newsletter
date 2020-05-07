@@ -8,12 +8,14 @@ const HomePage = {
 
   .heroContainer{
     position: relative;
-    height: 70vh;
+    min-height: 80vh;
+    max-height: 85vh;
     width: auto;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
     margin-top: 110px;
+    background: #fff;
   }
 
   .heroText {
@@ -129,6 +131,9 @@ const HomePage = {
 
   `}
   ${Screen.largePhone`
+  .heroContainer{
+    min-height: 100vh;
+  }
   .heroquote1{
     font-size: 30px !important;
     line-height: 1;
@@ -139,6 +144,9 @@ const HomePage = {
     }
   `}
   ${Screen.smallPhone`
+  .heroContainer{
+    min-height: 100vh;
+  }
   .heroquote1{
     font-size: 25px !important;
   }

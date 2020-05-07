@@ -82,8 +82,8 @@ const ListContainer = styled.div`
     margin-top: 0px;
   `};
   ${Screen.largePhone`
-  display: none;
-`};
+    display: none;
+  `};
 `;
 
 const NavList = styled.div`
@@ -98,9 +98,8 @@ const NavList = styled.div`
 `;
 const NavBtn = styled.div`
 height: 20px;
-margin-top: -14px;
 `;
-const image = {
+const imageStyle = {
   height: '50px',
   width: '50px',
 };
@@ -142,31 +141,19 @@ export default class Nav extends React.Component {
         <NavContainer className={this.state.show ? 'active' : 'hidden'}>
         <Svg>
           <Link to={'/'}>
-            <img style={image} src={Logo} alt='logo'/>
+            <img style={imageStyle} src={Logo} alt='logo'/>
           </Link>
         </Svg>
         <HamburgerContainer>
             <Hamburger right style={{ zIndex: '900' }}>
-              <NavBtn>
-                <a
-                href={
-                  '/'
-                }
-                className='btn-primary'
-                >
+              <NavBtn className='btn-primary'>
                   {navs}
-                </a>
               </NavBtn>
             </Hamburger>
           </HamburgerContainer>
           <ListContainer>
-            <NavBtn>
-              <a
-              href='/'
-              className='btn-primary'
-              >
+            <NavBtn className='btn-primary'>
               {navs}
-              </a>
             </NavBtn>
           </ListContainer>
         </NavContainer>

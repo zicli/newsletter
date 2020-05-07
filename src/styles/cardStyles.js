@@ -34,7 +34,6 @@ const CardStyle = {
     align-content: space-between;
   }
 
-
   .cardHeader {
     font-size: 22px;
     line-height: 1.3;
@@ -46,6 +45,7 @@ const CardStyle = {
   }
 
   .loading {
+    margin-top: 150px;
     display: flex;
     justify-content: center;
     width: 100%
@@ -94,7 +94,7 @@ const CardStyle = {
       font-size: 20px;
     }
     .square{
-      flex: 1 0 100%;
+      flex: 0 0 100%;
       height: auto;
       margin: 15px 0;
       }
