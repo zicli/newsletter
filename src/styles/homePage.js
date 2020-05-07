@@ -112,6 +112,9 @@ const HomePage = {
   `}
 
   ${Screen.screen800`
+    .heroContainer{
+      height: 70vh;
+    }
     .form-control {
       width: 80%;
     }
@@ -131,6 +134,9 @@ const HomePage = {
 
   `}
   ${Screen.largePhone`
+  .heroContainer{
+    height: 70vh;
+  }
   .heroquote1{
     font-size: 30px !important;
     line-height: 1;
@@ -141,6 +147,9 @@ const HomePage = {
     }
   `}
   ${Screen.smallPhone`
+  .heroContainer{
+    height: 70vh;
+  }
   .heroquote1{
     font-size: 25px !important;
   }

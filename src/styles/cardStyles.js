@@ -94,7 +94,7 @@ const CardStyle = {
       font-size: 20px;
     }
     .square{
-      flex: 1 0 100%;
+      flex: 0 0 100%;
       height: auto;
       margin: 15px 0;
       }

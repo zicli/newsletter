@@ -13,6 +13,7 @@ const NewsContainer = styled.div`
   ${CardStyles.newsletterCard}
     position: relative;
     width: auto;
+    z-index: 0;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -40,25 +41,22 @@ const NewsContainer = styled.div`
       margin-top: -530px;
     `};
     ${Screen.tablet`
-      margin-top: -450px;
+      margin-top: -200px;
     `};
     ${Screen.screen666`
-      margin-top: 40px;
+      margin-top: -20px;
     `};
     ${Screen.screen630`
       margin-top: -150px;
     `};
-    ${Screen.miniTablet`
-      margin-top: -250px;
-    `};
     ${Screen.largePhone`
-      margin-top: -200px;
+      margin-top: -120px;
     `};
     ${Screen.screen425`
-      margin-top: -140px;
+      margin-top: -90px;
     `};
     ${Screen.phone`
-      margin-top: -90px;
+      margin-top: -70px;
     `};
 `;
 

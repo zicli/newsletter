@@ -82,8 +82,8 @@ const ListContainer = styled.div`
     margin-top: 0px;
   `};
   ${Screen.largePhone`
-  display: none;
-`};
+    display: none;
+  `};
 `;
 
 const NavList = styled.div`

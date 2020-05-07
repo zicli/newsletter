@@ -149,7 +149,7 @@ const GlobalStyle = createGlobalStyle`
     position: fixed;
     width: 25px;
     height: 15px;
-    top: 29px;
+    top: 30px;
     right: 25px;
   }
 
