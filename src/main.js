@@ -5,6 +5,7 @@ import ApolloClient from 'apollo-boost';
 import { ToastsContainer, ToastsStore, ToastsContainerPosition } from 'react-toasts';
 import {
   App,
+  Unsubscriber,
   ErrorPage,
 } from 'pages';
 
@@ -24,6 +25,7 @@ class Main extends Component {
           position={ToastsContainerPosition.TOP_RIGHT} lightBackground/>
          <Switch>
           <Route exact path='/' component={App} />
+          <Route exact path='/unsubscribe' component={Unsubscriber} />
           <Route exact path='/404' component={ErrorPage} />
           <Redirect to="/404" />
         </Switch>
