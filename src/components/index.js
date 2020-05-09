@@ -4,6 +4,7 @@ import Card from './card';
 import NewsletterCard from './NewsletterCard';
 import Loader from './loader';
 import ButtonLoader from './buttonLaoder';
+import Unsubscribe from './unsubscribe';
 
 export {
   Nav,
@@ -12,4 +13,5 @@ export {
   NewsletterCard,
   Loader,
   ButtonLoader,
+  Unsubscribe,
 };
