@@ -13,3 +13,9 @@ export const ADD_SUBSCRIBERS = gql`
     }
   }
 `;
+
+export const REMOVE_SUBSCRIBERS = gql`
+  mutation removeSubscriber ($email: String!) {
+    removeSubscriber(email: $email)
+  }
+`;

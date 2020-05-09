@@ -1,50 +1,71 @@
-/* eslint-disable no-shadow */
-/* eslint-disable no-nested-ternary */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, Fragment } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import styled from 'styled-components';
-import {} from 'styles';
 import { createBrowserHistory } from 'history';
 import queryString from 'query-string';
 import { Zoom } from 'react-reveal';
 import { useMutation } from '@apollo/react-hooks';
-import { ToastsStore } from 'react-toasts';
-import HeroImage from '../images/hero.jpg';
-import { ADD_SUBSCRIBERS } from '../graphql/mutations';
+import { Screen } from 'styles';
+import Logo from '../images/ziclilogo.png';
+import { REMOVE_SUBSCRIBERS } from '../graphql/mutations';
+import Loader from './loader';
 
-const SubContainer = styled.div``;
+const SubContainer = styled.div`
+  margin: 10% 5% 20px;
+  height: 100%;
+  text-align: center;
+  ${Screen.screen874`
+    margin-top: 28%;
+  `};
+  ${Screen.miniTablet`
+    margin-top: 32%;
+  `};
+  ${Screen.largePhone`
+    margin-top: 35%;
+  `};
+  ${Screen.screen360`
+    margin-top: 45%;
+  `};
+`;
 
 const GlobalBanner = () => {
-  const [load2, setLoad] = useState({ loading2: false });
-  const { loading2 } = load2;
   const history = createBrowserHistory();
   const parsed = queryString.parse(history.location.search);
-  console.log(parsed);
 
-  const [removeSubscribers, { loading, data }] = useMutation(ADD_SUBSCRIBERS);
-  // useEffect(() => {
-  //   if (parsed.token) {
-  //     localStorage.setItem('token', parsed.token);
-  //   }
-  //   if (user && user.verified && parsed.token) {
-  //     (
-  //       setTimeout(() => {
-  //         document.querySelector('.bg').remove();
-  //       }, 2000));
-  //   }
-  // }, [parsed.token, user]);
-  // const Resend = async () => {
-  //   setLoad({ ...load2, loading2: true });
-  //   await resendEmail(user.email);
-  //   await loadUser();
-  //   setLoad({ ...load2, loading2: false });
-  // };
-  // if (!token) return null;
-  // if (user && user.verified && !parsed.token) return null;
+  const [removeSubscribers, { loading, data, error }] = useMutation(REMOVE_SUBSCRIBERS, {
+    onError() {
+      return Redirect('/');
+    },
+  });
+
+  useEffect(() => {
+    removeSubscribers({ variables: { email: parsed.email } });
+  }, [error, removeSubscribers, parsed.email]);
+
+  const imageStyle = {
+    height: '85px',
+    width: '85px',
+    marginTop: '35px',
+  };
+
   return (
     <>
       {
         <SubContainer>
-         <h1>Unsubscribe User</h1>
+         { loading && <Loader/> }
+         { error && Redirect('/') }
+         {
+           data && <Fragment>
+             <Zoom>
+               <p className="unsubscribeText">You have been successfully</p>
+               <span className="unsubscribeStrong">UNSUBSCRIBED</span>
+               <p className="unsubscribeText">from our newsletter</p>
+                <Link to='/'>
+                  <img src={Logo} alt="Zicli Logo" style={imageStyle}/>
+                </Link>
+             </Zoom>
+           </Fragment>
+          }
         </SubContainer>
       }
     </>

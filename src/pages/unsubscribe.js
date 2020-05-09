@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
-import { GlobalStyle, Screen } from 'styles';
+import { GlobalStyle } from 'styles';
 import { Nav, Unsubscribe } from 'components';
 
 const UnsubscriberContainer = styled.div``;

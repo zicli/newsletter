@@ -53,6 +53,20 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-display: auto;
   }
+  @font-face {
+    font-family: 'Kumbh Sans';
+    src: url(${Fonts.KumbhSansBold}) format ('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: auto;
+  }
+  @font-face {
+    font-family: 'Kumbh Sans';
+    src: url(${Fonts.KumbhSansRegular}) format ('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: auto;
+  }
 
   body {
     margin: 0;
@@ -206,6 +220,29 @@ const GlobalStyle = createGlobalStyle`
       transform: rotate(360deg);
     }
   }
+
+  .unsubscribeText {
+    margin: 12px 0 0;
+    font-size: 13px;
+    color: #000;
+    letter-spacing: .6;
+    font-weight: 700;
+  }
+
+  .unsubscribeStrong {
+    color: ${Basics.colors.bloodRed};
+    letter-spacing: 1;
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  ${Screen.miniTablet`
+    .unsubscribeStrong {
+      font-size: 30px;
+    }
+  `};
 
 `;
 

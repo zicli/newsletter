@@ -5,6 +5,8 @@ import NotoSansItalicTTF from 'fonts/NotoSans/NotoSans-Italic.ttf';
 import NotoSansRegularTTF from 'fonts/NotoSans/NotoSans-Regular.ttf';
 import LilitaOneRegularTTF from 'fonts/LilitaOne/LilitaOne-Regular.ttf';
 import BalooBhainaRegullarTTF from 'fonts/BalooBhaina/BalooBhaina-Regular.ttf';
+import KumbhSansBold from 'fonts/Kumbh Sans/KumbhSansBold.ttf';
+import KumbhSansRegular from 'fonts/Kumbh Sans/KumbhSansRegular.ttf';
 
 export {
   MonotonRegularTTF,
@@ -14,4 +16,6 @@ export {
   NotoSansRegularTTF,
   LilitaOneRegularTTF,
   BalooBhainaRegullarTTF,
+  KumbhSansBold,
+  KumbhSansRegular,
 };
