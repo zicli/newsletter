@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { CardStyles } from 'styles';
 import moment from 'moment';
@@ -23,15 +24,15 @@ const textTruncate = (title, content, length, ending = '........') => {
 
 const Card = ({
   newsletter: {
-    title, content, author, createdAt,
+    id, title, content, author, createdAt,
   },
 }) => (
   <CardContainer className='square'>
     <div className='inner-card'>
         <div className="cardHeader">
-          <a href='/' data-content className='headerLink'>
+          <Link to={`/newsletter?id=${id}`} data-content className='headerLink'>
             {textTruncate(title, 62)}
-          </a>
+          </Link>
         </div>
         <div className="fit">
           <p className='cardText'>{textTruncate(title, content, 300)}</p>

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Basics, Screen } from 'styles';
+import { Zoom } from 'react-reveal';
 
 const ContentContainer = styled.div`
   position: relative;
@@ -10,7 +11,7 @@ const ContentContainer = styled.div`
 
 const Title = styled.h2`
   font-size: ${Basics.fontSize.medium};
-  color: ${({ theme }) => theme.color};
+  color: ${Basics.colors.bloodRed};
   font-weight: 700;
   margin: 0px;
   ${Screen.largePhone`
@@ -28,6 +29,7 @@ const BodyText = styled.p`
   padding-top: 50px;
   font-size: 15px;
   font-weight: 500;
+  text-align: justify;
   ${Screen.largePhone`
     font-size: ${Basics.fontSize.small};
   `};
@@ -37,14 +39,16 @@ const BodyText = styled.p`
 `;
 
 const Page = ({ content }) => (
-
-  <ContentContainer>
-    <Title>{content.title}</Title>
-    <SubTitle>
-      {content.category} by {content.author}
-    </SubTitle>
-    <BodyText dangerouslySetInnerHTML={{ __html: content.content }} />
-  </ContentContainer>
+  <Zoom>
+    <ContentContainer>
+      <img src={content.headerImage} alt={content.title}/>
+      <Title>{content.title}</Title>
+      <SubTitle>
+        {content.category} by {content.author}
+      </SubTitle>
+      <BodyText dangerouslySetInnerHTML={{ __html: content.content }} />
+    </ContentContainer>
+  </Zoom>
 );
 
 export default Page;
