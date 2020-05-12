@@ -54,7 +54,6 @@ const SingleNewsletter = () => {
   const { loading, data, error } = useQuery(GET_ONE_NEWSLETTER, {
     variables: { id: parseInt(`${id}`, 10) },
   });
-console.log(data);
 
   return (
     <>

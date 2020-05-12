@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Basics, Screen } from 'styles';
+import { Basics, Screen, CardStyles } from 'styles';
 import { Zoom } from 'react-reveal';
 
 const ContentContainer = styled.div`
+  ${CardStyles.newsletterCard},
   position: relative;
   padding: 10px 20px;
   margin: 100px 0;
@@ -41,7 +42,7 @@ const BodyText = styled.p`
 const Page = ({ content }) => (
   <Zoom>
     <ContentContainer>
-      <img src={content.headerImage} alt={content.title}/>
+        <img src={content.headerImage} alt={content.title} className='contentImage'/>
       <Title>{content.title}</Title>
       <SubTitle>
         {content.category} by {content.author}
