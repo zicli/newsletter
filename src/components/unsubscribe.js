@@ -28,6 +28,14 @@ const SubContainer = styled.div`
   `};
 `;
 
+const LoaderContainer = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const GlobalBanner = () => {
   const history = createBrowserHistory();
   const parsed = queryString.parse(history.location.search);
@@ -52,7 +60,13 @@ const GlobalBanner = () => {
     <>
       {
         <SubContainer>
-         { loading && <Loader/> }
+         {
+          loading && <Fragment>
+            <LoaderContainer>
+              <Loader/>
+            </LoaderContainer>
+           </Fragment>
+          }
          { error && Redirect('/') }
          {
            data && <Fragment>

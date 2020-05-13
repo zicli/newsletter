@@ -76,6 +76,17 @@ const CardStyle = {
     color: ${Basics.colors.fadedRed}
   }
 
+  .contentImage {
+    width: 100%;
+    height: 53vh;
+    marginBottom: 20px;
+  }
+
+  ${Screen.pc`
+    .contentImage {
+      height: 40vh;
+    }
+  `};
   ${Screen.screen936`
     .cardHeader {
       font-size: 19px;
@@ -102,6 +113,11 @@ const CardStyle = {
         margin: 15px 0 10px;
         text-align: center;
       }
+  `};
+  ${Screen.largePhone`
+    .contentImage {
+      height: 30vh;
+    }
   `};
   `,
 };

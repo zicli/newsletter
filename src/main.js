@@ -6,6 +6,7 @@ import { ToastsContainer, ToastsStore, ToastsContainerPosition } from 'react-toa
 import {
   App,
   Unsubscriber,
+  Newsletter,
   ErrorPage,
 } from 'pages';
 
@@ -26,6 +27,7 @@ class Main extends Component {
          <Switch>
           <Route exact path='/' component={App} />
           <Route exact path='/unsubscribe' component={Unsubscriber} />
+          <Route exact path='/newsletter' component={Newsletter} />
           <Route exact path='/404' component={ErrorPage} />
           <Redirect to="/404" />
         </Switch>

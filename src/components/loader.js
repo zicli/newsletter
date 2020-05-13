@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Loader from '../images/loader.gif';
 
 const imageStyle = {
-  height: '50px',
-  width: '50px',
+  height: '60px',
+  width: '60px',
 };
 
 const loaderStyle = {
